@@ -1,0 +1,36 @@
+print("=== FRUIT MENU GAME ===")
+
+fruits = ["แอปเปิล", "กล้วย", "ส้ม"]   # ใช้ List
+
+while True:
+    print("\nเมนู:")
+    print("1 = ดูรายการผลไม้")
+    print("2 = เพิ่มผลไม้")
+    print("3 = ลบผลไม้")
+    print("0 = ออกจากเกม")
+
+    choice = int(input("เลือกเมนู: "))
+
+    match choice:
+        case 1:
+            print("รายการผลไม้:", fruits)
+
+        case 2:
+            new_fruit = input("เพิ่มผลไม้: ")
+            fruits.append(new_fruit)
+            print("เพิ่มแล้ว:", fruits)
+
+        case 3:
+            remove_fruit = input("ผลไม้ที่จะลบ: ")
+            if remove_fruit in fruits:
+                fruits.remove(remove_fruit)
+                print("ลบแล้ว:", fruits)
+            else:
+                print("ไม่มีผลไม้นี้ในรายการ!")
+
+        case 0:
+            print("ออกจากเกม บ๊ายบาย!")
+            break
+
+        case _:
+            print("ไม่มีเมนูนี้ ลองใหม่อีกครั้ง")
