@@ -1,0 +1,20 @@
+import time
+import random
+
+print("=== เกมฝึกสมอง ===")
+name = input("คุณชื่ออะไร: ")
+print("สวัสดี", name)
+
+print("เตรียมนับถอยหลัง...")
+for i in range(3, 0, -1):
+    print(i)
+    time.sleep(1)
+
+secret = random.randint(1, 10)
+guess = int(input("ทายเลข 1-10: "))
+
+if guess == secret:
+    print("เยี่ยมมาก", name, "ตอบถูก!")
+else:
+    print("ยังไม่ใช่ ลองใหม่รอบหน้าได้เลย")
+    print("เฉลยคือ", secret)
