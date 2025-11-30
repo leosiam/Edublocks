@@ -1,0 +1,32 @@
+import random
+import time
+
+print("=== Memory Flash Game ===")
+print("เกมนี้จะโชว์ตัวเลขให้ดู 1 วินาที แล้วจะหายไป")
+time.sleep(2)
+
+# สร้างลิสต์เก็บตัวเลข 3 ตัวแบบสุ่ม
+numbers = []
+for i in range(3):
+    numbers.append(random.randint(10, 99))
+
+print("จำตัวเลขนี้ให้ดี:", numbers)
+time.sleep(1)
+
+# ล้างหน้าจอแบบง่าย ๆ (ใช้พิมพ์บรรทัดว่างแทน)
+print("\n" * 20)
+
+print("ตอนนี้… ทายตัวเลขเหล่านั้น!")
+guess1 = int(input("ตัวเลขตัวที่ 1 คืออะไร: "))
+guess2 = int(input("ตัวเลขตัวที่ 2 คืออะไร: "))
+guess3 = int(input("ตัวเลขตัวที่ 3 คืออะไร: "))
+
+# เช็กผลลัพธ์
+score = 0
+if guess1 == numbers[0]: score += 1
+if guess2 == numbers[1]: score += 1
+if guess3 == numbers[2]: score += 1
+
+print("คุณจำถูกทั้งหมด", score, "จาก 3 ตัว")
+print("ตัวเลขคือ:", numbers)
+print("ขอบคุณที่เล่นนะ!")
