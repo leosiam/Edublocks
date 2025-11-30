@@ -1,0 +1,28 @@
+import random
+
+print("=== MINI MENU GAME ===")
+print("กด 1 = ทายเลข, 2 = สุ่มคำชม, 3 = เช็คเลขคู่คี่, 0 = ออกเกม")
+
+while True:
+    choice = int(input("เลือกเมนู: "))
+
+    match choice:              # switch-case แบบ Python
+        case 1:
+            num = random.randint(1, 5)
+            guess = int(input("ทายเลข 1–5: "))
+            print("ถูกต้อง!" if guess == num else f"ผิดนะ เลขคือ {num}")
+
+        case 2:
+            words = ["เก่งมาก!", "สุดยอด!", "ทำได้ดี!", "สุดเท่!"]
+            print("คำชมของคุณคือ:", random.choice(words))
+
+        case 3:
+            n = int(input("ใส่ตัวเลข: "))
+            print("เป็นเลขคู่" if n % 2 == 0 else "เป็นเลขคี่")
+
+        case 0:
+            print("ออกจากเกมแล้วนะ บ๊ายบาย!")
+            break
+
+        case _:
+            print("ไม่มีเมนูนี้ ลองใหม่อีกครั้ง")
